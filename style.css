@@ -1,0 +1,104 @@
+body {
+  background-color:#222222;
+  font-family: Roboto, Arial;
+  font-weight: 100;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  width: 100%;
+  top: 38%;
+}
+
+.centerSub {
+  position: absolute;
+  width: 30%;
+  top: 38%;
+  left: 35.005%;
+}
+
+.subcontent {
+  opacity: 0;
+  position: absolute;
+  width: 22%;
+  top: 39%;
+  right: 23%;
+  font-size: 1.15em;
+}
+
+.title {
+  color:#88BBDD;
+  text-align: center;
+  font-size: 3em;
+  padding-bottom: 0.75em;
+}
+
+.subtitle {
+  margin: 0px auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.blogTitle {
+  color:#FA6900;
+  text-align: center;
+  font-size: 3em;
+  padding-bottom: 0.25em;
+  padding-top: 0.75em;
+}
+
+.blogSubtitle {
+  margin: 0px auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.blogLab {
+  width:480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2em;
+}
+
+.blogLabTitle {
+  color:#FA6900;
+  text-align: center;
+  font-size: 1.25em;
+  padding-bottom: 1em;
+}
+
+.blogImage {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.blogAnswer {
+  font-family: RobotoRegular;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid #88BBDD;
+}
+
+a:link {
+  color:#88BBDD;
+}
+
+a:visited {
+  color:#88BBDD;
+}
+
+::-moz-selection {
+  background-color: #88BBDD;
+  color: #222222;
+}
+
+::selection {
+  background-color: #88BBDD;
+  color: #222222;
+}
