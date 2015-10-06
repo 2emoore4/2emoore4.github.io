@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>3d rendering in java</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div class="post">
+
+      <div class="blogTitle">
+        3d rendering in java
+      </div>
+      <div class="blogSubtitle">
+        may 2013
+      </div>
+      <div class="blogSubtitle">
+        <a href="https://github.com/2emoore4/graphics">github repository</a>
+      </div>
+
+      <div class="blogLab">
+
+        <p>
+          this page shows a semester-long project for a computer graphics course
+          which was taught in java. for the first week, we made 2d animations.
+          I created an interactive simulation containing squares and circles.
+          the squares flee from the cursor and the circles create explosions
+          which force away the squares.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/XpWeVKX0TUE" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          this week we made our first 3d renderers. they only displayed
+          wireframes but supported arbitrary geometries and could perform
+          transformations.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/GAue-V3IpMY" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          next our programs were able to create 'primitive' shapes like spheres
+          and cubes. the meshes were generated procedurally.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/GskS_eSj0yw" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          this demo shows geometry grouping. we were able to add many geometries
+          to a single group so that they could all be transformed together. note
+          all the cubes that are attached to the cylinder to form the saw blade.
+          they are all being rotated together by a single transformation.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/SzoEGba-NXU" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          during this week we finally started shading our geometries. this demo
+          isn't particularly interesting because they are shaded completely
+          black.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/Rv44hiEJxmg" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          the shading here is more complicated - the color is chosen based on
+          the surface normals.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/NV9Enh1j-74" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          finally we've got somewhat realistic-looking shading. this uses Phong
+          shading and the Phong illumination model.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/bCaE2oDKNm4" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          this week we stopped working on our geometry renderers and moved to
+          ray tracing instead. this only renders spheres but its lighting is
+          much improved compared to the previous renderer.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/r0cJyYY_51o" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          this shows a bunch of improvements to the ray tracer from the previous
+          week. some new techniques include subsampling and antialiasing to make
+          the renderer faster and more precise around edges. this also shows
+          moving lights and procedural textures.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/-u-brMtA52w" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          one cool thing about ray tracing is that shadows are really easy to
+          render - this demo shows the same ray tracer with moving lights and
+          shadows.<br>
+        </p>
+
+        <iframe width="480" height="270"
+          src="https://www.youtube.com/embed/nPClJlem8Ns" frameborder="0" allowfullscreen></iframe>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

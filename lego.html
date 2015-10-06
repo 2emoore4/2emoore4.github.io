@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>infrared depth scanner</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div class="post">
+
+      <div class="blogTitle">
+        infrared depth scanner
+      </div>
+      <div class="blogSubtitle">
+        may 2013
+      </div>
+
+      <div class="blogLab">
+
+        <p>
+          this is a project that I made for a class called Physical Computing, which was a mix of electronics and robotics. we were working with Arduinos for the entire semester. for the final project I decided to make an infrared 3d imaging device. originally I was hoping to use an ultrasonic rangefinder, but that ended up being way too inaccurate. my infrared sensor had a range of 150cm, so I was able to scan close objects.<br><br>
+          my device is similar to a basic ray tracer (except without any shading). the ray in this case is is just a beam of infrared light. the beam hits an object and gets reflected back to the sensor. at that point, the sensor knows how far away the closest object is.<br><br>
+          the infrared sensor is mounted on a Lego contraption that is built with two servo motors (one for X and one for Y) which are connected to an Arduino. the Arduino reads the distances and sends them back to a computer (via serial port) which is running a Processing applet (we were urged to use Processing throughout this class).<br><br>
+          here are some pictures of the physical device.<br><br>
+        </p>
+
+        <div class="blogImage">
+          <a href="http://i.imgur.com/f3FXtkwh.jpg">
+            <img src="http://i.imgur.com/f3FXtkwh.jpg" width="480">
+          </a>
+        </div>
+
+        <div class="blogImage">
+          <a href="http://i.imgur.com/zNk1tAKh.jpg">
+            <img src="http://i.imgur.com/zNk1tAKh.jpg" width="480">
+          </a>
+        </div>
+
+        <p>
+          at this point, it was easy to get it to perform it's scanning motion. for a window of size 500 px X 500 px, I just needed two for-loops, one each for X and Y ranging from 0 to 500. then I mapped this index to a certain angle that the servo motor could read. after it writes to the servo, it delays, then moves onto the next pixel. here's a video of it in action.<br><br>
+        </p>
+
+        <iframe width="480" height="270" src="http://www.youtube.com/embed/ORIlwsMa0U8?rel=0" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          now that it can scan properly, all that's left is writing the Processing applet. first, I had to figure out how I was going to send the data from the Arduino to Processing. I decided that every time the sensor made a reading, it would send the X, Y, and Z values. I thought this would work well, but I started to have some huge synchronization issues. these happened because Processing had no idea which value it was receiving. it wasn't able to differentiate between X, Y, and Z values because they all looked the same. to solve this, I decided to have the Arduino send packet-like things. it would send a string "go" so that Processing knows that its receiving a packet. from there, it's obvious that the next value will be X, the next value will be Y, and the last value will be Z. then it processes that data and waits for the next "go" signal.<br><br>
+          the packet processing was fairly simple. since the packet already contained the exact X and Y coordinates, it only really needed to process the Z value. this all depended on how I wanted to display the data. I decided to make a heatmap-type thing. the background would be blue and the closest objects would be red. to do this, I just mapped the z value to a color on a red-to-blue gradient and set the pixel at (X, Y) to that color.<br><br>
+          this worked really well after only a few tries. for my first test, I scanned this plaster hand sculpture thing. I started the scan and left because I knew it would take a while. I kept coming back to it and it was taking forever. it ended up taking an hour and a half to finish the whole 500 x 500 scan although it looked really good. here's a video of the first scan. you won't want to watch the whole thing. just skip ahead.<br><br>
+        </p>
+
+        <iframe width="480" height="360" src="http://www.youtube.com/embed/PkGNK-ruYoI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+        <p>
+          I decided to use subsampling to speed this up. if this device were to scan every single pixel, it would take forever, and it would be wasting a lot of time scanning the background. there's no point scanning every pixel of the background, since it never changes. therefore, the device should only scan every fourth (or more) pixel. after a scan is made, it checks for contour between the last two pixels. since a contour needs to be rendered precisely, it goes back and rescans the pixels that it skipped. however, if a contour is NOT detected, the software (instead of the sensor) can go back through those pixels and interpolate the color value based on the two recordings. this ended up improving the speed a little.<br><br>
+          also I used a supersampling technique for precision. rather than record one value at each pixel, it records many distance readings. it wouldn't be right to average these readings, because then the data would be skewed by outliers. instead, it takes 9 readings, shoves them into an array, sorts the array, then finds the mode. if there is no mode, then it takes the median. supersampling works really well for this device because it corrects the data which is sometimes pretty fuzzy.
+        </p>
+
+        <p>
+          <br><br>check out the final code that it's running.<br><br>
+        </p>
+
+        <script src="https://gist.github.com/2emoore4/5589618.js"></script>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

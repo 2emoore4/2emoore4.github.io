@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>3d rendering in javascript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="third_party/pixi.js"></script>
+    <script src="third_party/gl-matrix-min.js"></script>
+    <script src="third_party/perlin.js"></script>
+  </head>
+
+  <body class="post">
+    <div class="blogTitle">
+      3d rendering in javascript
+    </div>
+    <div class="blogSubtitle">
+      march 2014
+    </div>
+    <div class="blogSubtitle">
+      <a href="https://github.com/2emoore4/noize">github repository</a>
+    </div>
+
+    <div class="blogLab">
+      <div id="eyes"></div>
+      <p>this is basically the same as my java wireframe renderer except in
+      javascript. actually originally I wrote this in coffeescript (which is in
+      the github repo) but I regret that and recently translated it to js. you
+      can check this page's source for the js renderer.<br><br>
+      I wanted it to look like hand-drawn sketches so I'm rendering
+      at a low framerate and adding some noise to the vertices at every
+      frame.<br><br>
+      this is also capable of rendering in stereo and handling orientation
+      changes for vr. I haven't tested this vr mode very much but you can try
+      clicking this button to enable it. should probably work on a phone with
+      a cardboard viewer but I don't know if the orientation changes are
+      handled correctly.</p>
+      <button onclick="initvr()">vr mode</button>
+      <p>here's a video of a test 'sketch' I made a while ago. I put some
+      crinkled paper in the background to enhance the hand-drawn effect.</p>
+      <iframe src="https://player.vimeo.com/video/90062507" width="480" height="270" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <p>I also used this renderer for a programming-languages class project.
+      <a href="scripting.html">click here to see this.</a></p>
+    </div>
+
+    <script src="lib/util.js"></script>
+    <script src="lib/test.js"></script>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 body {
   background-color:#222222;
+  color:#88BBDD;
   font-family: Roboto, Arial;
   font-weight: 100;
   position: relative;
@@ -8,7 +9,7 @@ body {
 .center {
   position: absolute;
   width: 100%;
-  top: 38%;
+  top: 25%;
 }
 
 .centerSub {
@@ -28,9 +29,8 @@ body {
 }
 
 .title {
-  color:#88BBDD;
   text-align: center;
-  font-size: 3em;
+  font-size: 4em;
   padding-bottom: 0.75em;
 }
 
@@ -41,7 +41,6 @@ body {
 }
 
 .blogTitle {
-  color:#FA6900;
   text-align: center;
   font-size: 3em;
   padding-bottom: 0.25em;
@@ -62,7 +61,6 @@ body {
 }
 
 .blogLabTitle {
-  color:#FA6900;
   text-align: center;
   font-size: 1.25em;
   padding-bottom: 1em;
